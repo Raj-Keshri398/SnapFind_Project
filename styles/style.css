@@ -1,0 +1,1161 @@
+/* ---- BASIC RESET ---- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #ffffff;
+    color: #1e1e2f;
+    line-height: 1.5;
+    box-sizing: border-box;
+    overflow-x: hidden !important;
+}
+
+/* ---- Container ---- */
+.container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---- Header ---- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffff;
+}
+
+.headerSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 24px;
+}
+
+.logo img {
+    height: 36px;
+}
+
+/* Mobile toggle nav button */
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #6b4bff;
+    cursor: pointer;
+    margin-right: 14px;
+    margin-bottom: 0;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    transition: all 0.3 ease;
+}
+
+.responsiveButtons {
+    display: none;
+}
+
+.nav a {
+    position: relative;
+    color: #646676;
+}
+
+.nav a:hover {
+    color: #6b4bff;
+}
+
+.headerLeftButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.contactButton,
+.loginButton {
+    width: 100px;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.contactButton {
+    border: 1px solid #6b4bff;
+    background: transparent;
+    color: #6b4bff;
+}
+
+.contactButton:hover {
+    background: #6b4bff;
+    color: #fff;
+}
+
+.loginButton {
+    background: #6b4bff;
+    color: #fff;
+    box-shadow: 0 12px 25px rgba(107, 75, 255, 0.35);
+}
+
+.loginButton:hover {
+    background: #2d14e5;
+}
+
+/* ---- Responsive Header ---- */
+@media (max-width: 768px) {
+    .headerSection {
+        flex-wrap: wrap;
+    }
+
+    .menuToggle {
+        display: block;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 3;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+        transform: translateY(-200%);
+        opacity: 0;
+        pointer-events: none;
+        
+    }
+
+    /* When active */
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Hide desktop buttons */
+    .headerLeftButtons {
+        display: none;
+    }
+
+    /* Show mobile buttons */
+    .responsiveButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 0;
+    }
+
+    .responsiveButtons button {
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 16px;
+        padding: 6px 0;
+    }
+}
+
+
+/* ---- Information Section ----- */
+.firstLook_HeroSection {
+    padding: 70px 0 120px;  
+    background: linear-gradient(180deg, #dfa674 0%, #edb497 40%, #f5c4c4 100%);
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+    overflow: hidden;
+}
+
+.firstLookFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100% !important;
+    overflow: hidden;
+}
+
+.firstLookLeft {
+    flex: 1 1 55%;
+}
+
+.tag {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #6b4bff;
+    font-weight: 600;
+}
+
+.firstLookLeft h1 {
+    font-size: 38px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #26263f;
+}
+
+.subText {
+    font-size: 16px;
+    color: #595a5d;
+    max-width: 480px;
+    margin-bottom: 22px;
+}
+
+.stats {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.statItem i {
+    font-size: 22px;
+    color: #f2eaff;
+    background: #6b4bff;
+    padding: 12px;
+    border-radius: 50%;
+}
+
+.stats h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.stats p {
+    font-size: 12px;
+    color: #6f7284;
+    margin-top: -2px;
+}
+
+.firstLookRight {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.firstLookRight_img {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 22px;
+}
+
+/* ---- Responsive Infor ---- */
+@media (max-width: 992px) {
+    .firstLook_HeroSection {
+        width: 100%;
+    }
+
+    .firstLookFlex {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .firstLookRight {
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .firstLookLeft h1 {
+        font-size: 28px;
+    }
+
+    .stats {
+        gap: 14px;
+    }
+
+    .statItem i {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+}
+
+/* ---- Floating Signup from ---- */
+.signupFloatingForm {
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.signupBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 12px;
+    padding: 16px 20px;
+    background: linear-gradient(180deg, #dfa674 0%, #edb497 40%, #f5c4c4 100%);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 880px;
+    align-items: center;
+    z-index: 11;
+}
+
+.signupBox input {
+    border-radius: 4px;
+    border: 1px solid #f0d8d0;
+    background: #fff7f5;
+    padding: 8px 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.signupBox input::placeholder {
+    color: #c9a7a0;
+}
+
+.signupBox button {
+    border-radius: 4px;
+    background: linear-gradient(90deg, #6b4bff, #b07bff);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 0;
+    width: 100px;
+    cursor: pointer;
+}
+
+.signupBox button:hover {
+    transform: translateY(-2px);
+}
+
+/* ---- Responsive signup ---- */
+@media (max-width: 992px) {
+
+    .signupBox {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .signupBox {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- LeaderBorad section ---- */
+.leaderboard {
+    text-align: center;
+    background: #ffffff;
+    min-height: 420px;
+    padding: 50px 0;
+}
+
+.leaderboard h2 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.leaderboard h2 span {
+    color: #6b4bff;
+}
+
+.leaderboard .sub {
+    font-size: 14px;
+    color: #676767;
+    margin-bottom: 20px;
+}
+
+.leaderCard {
+    margin: 0 auto;
+    max-width: 540px;
+    background: #ffff;
+    border-radius: 8px;
+    padding: 30px 18px 20px;
+    box-shadow: 0 14px 40px rgba(15, 23, 50, 0.12);
+    text-align: left;
+    position: relative;
+}
+
+.live {
+    position: absolute;
+    top: -26px;
+    left: 16px;
+    background: #ffefe8;
+    color: #ff3b3b;
+    padding: 4px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.leaderCard table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.leaderCard th,
+.leaderCard td {
+    padding: 8px 4px;
+    border-bottom: 1px solid #e4ddff;
+}
+
+.leaderCard th {
+    text-align: left;
+    color: #6f7284;
+    font-weight: 600;
+}
+
+.leader-card tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---- Resposnsive leaderboard ---- */
+@media (max-width: 768px) {
+
+    .leaderboard h2 {
+        font-size: 24px;
+    }
+
+    .leaderCard {
+        padding: 22px 14px;
+    }
+}
+
+/* ---- Freelancer connect secction ---- */
+.connect {
+    margin: 0;
+    padding: 50px 0;
+    text-align: center;
+    background: linear-gradient(180deg, #e7e2ef 0%, #eddbdb 60%);
+}
+
+.connect h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #222;
+}
+
+.connect h2 span {
+    color: #6b4bff;
+}
+
+.connect p {
+    max-width: 720px;
+    margin: 18px auto 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ---- Responsive connect ---- */
+@media (max-width: 768px) {
+
+    .connect h2 {
+        font-size: 24px;
+    }
+
+    .connect p {
+        font-size: 14px;
+        padding: 0 12px;
+    }
+}
+
+/* ---- Steps for apply info job section ---- */
+.steps {
+    padding: 40px 0 60px;
+    text-align: center;
+    background: #ffffff;
+    overflow: visible !important;
+}
+
+.steps h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.steps h2 span {
+    color: #6b4bff;
+}
+
+.stepsBox {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 45%;
+    width: 230px;
+    box-shadow: 10px 0 0 0 rgba(0,0,0,0.10);
+    position: relative;
+}
+
+.step h3 {
+    margin-top: -60px;
+    font-size: 70px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.step p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    text-align: left;
+}
+
+.step .stepPara {
+    font-size: 12px;
+    font-weight: 400;
+    color: #7c7b7b;
+    text-align: left;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    right: -35px;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* step colors */
+.step:nth-child(1) h3 { 
+    color: #16a34a; 
+}
+.step:nth-child(1)::after { 
+    background: #16a34a; 
+}
+
+.step:nth-child(2) h3 { 
+    color: #f59e0b; 
+}
+.step:nth-child(2)::after { 
+    background: #f59e0b; 
+}
+
+.step:nth-child(3) h3 { 
+    color: #ef4444; 
+}
+.step:nth-child(3)::after { 
+    background: #ef4444; 
+}
+
+/* ---- Responsive Steps ---- */
+@media (max-width: 768px) {
+
+    .steps h2 {
+        font-size: 24px;
+    }
+
+    .step {
+        width: 200px;
+        padding: 26px 32px;
+    }
+
+    .step h3 {
+        font-size: 54px;
+        margin-top: -40px;
+    }
+}
+
+/* ---- Job section ---- */
+.job_section {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.job_section h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.job_section h2 span {
+    color: #6b4bff;
+}
+
+.job_section .job_section_para {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Grid container */
+.jobContainer {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+/* card/Panel */
+.jobPanel {
+    background: #e7e6ea;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #ece6ff;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.jobPanel:hover {
+    transform: translateY(-4px);
+}
+
+.jobPanel h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Tag + Salary */
+.jobMeta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tagGreen,
+.tagBlue {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tagGreen {
+    background: #e5f9ef;
+    color: #15803d;
+}
+
+.tagBlue {
+    background: #eaf1ff;
+    color: #2563eb;
+}
+
+.salary {
+    font-size: 12px;
+    color: #444;
+}
+
+/* Company row */
+.companyRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.companyLogo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.companyInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.companyName {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+.companyLocation {
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.companyLocation i {
+    color: #6b4bff;
+    font-size: 14px;
+}
+
+/* Applicants */
+.jobBottom {
+    margin-top: 20px;
+}
+
+.applicants {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.applicants img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.applicants span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Buttons */
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.outlinebutton {
+    padding: 7px 16px;
+    font-size: 12px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid #6b4bff;
+    color: #6b4bff;
+    font-weight: 600;
+}
+
+.jobApply {
+    padding: 7px 16px;
+    font-size: 12px;
+    border-radius: 8px;
+    background: #6b4bff;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* View all buttons */
+.viewAll {
+    display: inline-block;
+    margin-top: 26px;
+    color: #6b4bff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* ---- Responsive job section ---- */
+@media (max-width: 992px) {
+    .jobContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .jobContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- freelancer section ----- */
+.freelancer{
+    background: #ffffff;
+    padding: 40px 0;
+}
+
+.freelancer .container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.freelancerInner {
+    width: 100%;
+    background: #000;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.freelancerLeft {
+    padding: 0 40px;
+}
+
+.freelancerLeft h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 34px;
+    color: #8b9dff;
+    font-weight: 700;
+}
+
+.freelancerLeft h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.freelancerLeft p {
+    font-size: 14px;
+    color: #cbd5f5;
+    max-width: 380px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.freelancerButton {
+    background: #6b4bff;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.freelancerButton:hover {
+    background: #4330cc;
+    transform: translateY(-3px);
+}
+
+.freelancerImg {
+    width: 380px;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+
+/* ---- Responsive Freelancer  ---- */
+@media (max-width: 992px) {
+    .freelancerInner {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 28px;
+    }
+
+    .freelancerLeft p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .freelancerImg {
+        width: 240px;
+    }
+}
+
+@media (max-width: 600px) {
+    .freelancerInner {
+        padding: 28px 22px;
+    }
+
+    .freelancerLeft h3 {
+        font-size: 24px;
+    }
+
+    .freelancerImg {
+        width: 200px;
+    }
+}
+
+/* ---- Community container section ---- */
+.community {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.community h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.community h2 span {
+    color: #6b4bff;
+}
+
+/* Wrapper */
+.community-section-box {
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+/* Scroller/ slider */
+.vid-scroller-slider {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    padding-right: 0 !important;
+}
+
+
+.vid-scroller-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Video card */
+.vid-card-box {
+    width: 240px;
+    min-width: 240px;
+    height: 330px;
+    background: #0f172a;
+    border-radius: 20px;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    filter: blur(3px);
+    transform: scale(0.92);
+    transition: 0.35s ease;
+}
+
+.vid-card-box:hover {
+    filter: blur(0);
+    transform: scale(1.07);
+    z-index: 5;
+}
+
+.vid-card-box video {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.vid-play-button {
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #37e7a2;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.vid-card-box:hover .vid-play-button {
+    opacity: 0;
+}
+
+.vid-card-box p {
+    position: relative;
+    z-index: 3;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(0,0,0,0.4);
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.vid-card-box.active {
+    filter: blur(0);
+    transform: scale(1.07);
+    z-index: 4;
+}
+
+/* ---- Responsive community ---- */
+@media (max-width: 992px) {
+    .vid-scroller-slider {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .vid-scroller-slider {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 540px) {
+    .vid-scroller-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- Companies Section ---- */
+.companies-hiring {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.companies-hiring h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    color: #444;
+}
+
+.companies-hiring h3 span {
+    color: #6b4bff;
+}
+
+.hiring-company-logos {
+    padding: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 100px;
+}
+
+.hiring-company-logos img {
+    height: 36px;
+    opacity: 0.9;
+    transition: 0.2s ease-in-out;
+}
+
+.hiring-company-logos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .hiring-company-logos {
+        padding: 20px !important;
+        gap: 30px !important;
+        justify-content: center !important;
+    }
+
+
+
+    .hiring-company-logos img {
+        height: 30px;
+    }
+}
+
+/* ---- Footer section */
+.footer-section {
+    padding: 40px;
+    background: linear-gradient(135deg, #aeadb0, #fef9ff);
+    margin-top: 20px;
+}
+
+.footer-flex-box {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    border-bottom: 1px solid #3f3f41;
+    padding-bottom: 18px;
+}
+
+.footer-logo-snapfeed {
+    height: 32px;
+    margin-bottom: 20px;
+}
+
+.footer-box p  b {
+    font-size: 12px;
+    color: #6b4bff;
+    max-width: 260px;
+}
+
+.footer-box h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #6b4bff;
+}
+
+.footer-box a {
+    display: block;
+    font-size: 12px;
+    color: #696d76;
+    margin-bottom: 5px;
+    transition: 0.2s ease;
+}
+
+.footer-box a:hover {
+    color: #6b4bff;
+    transform: scaleY(1.08);
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 70px;
+    color: #6b4bff;
+}
+
+/* ---- Responsive Footer ---- */
+@media (max-width: 992px) {
+    .footer-flex-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-flex-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-left: 0;
+    }
+}
