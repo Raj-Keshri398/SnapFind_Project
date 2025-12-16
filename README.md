@@ -98,3 +98,4 @@ SnapFind_Project/
 │── videos/
 └── v1.mp4
 
+Website hosted using GitHub Pages.
