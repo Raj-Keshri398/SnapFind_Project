@@ -1,0 +1,517 @@
+
+/* ----- Info panel ---- */
+.InformationPaanel {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.innerDiv {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #3549ff, #5263ff, #6b7cff);
+    border-radius: 14px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    color: white;
+}
+
+.TextDiv {
+    padding: 26px 30px;
+    max-width: 660px;
+    display: flex;
+    align-items: center;
+}
+
+.TextDiv p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 580px;
+    color: #eef1ff;
+}
+
+.ImageDiv {
+    padding: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+}
+
+.ImageDiv img {
+    display: block;
+    width: 360px;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 768px) {
+    .innerDiv {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ImageDiv {
+        margin-left: 0;
+    }
+
+    .ImageDiv img {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+/* ----- Comapany reach section ----- */
+.OurReach {
+    margin-top: 60px;
+}
+
+.OurReachbox {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ReachBoxitem {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.reachIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Each icon indivisual color */
+.reachIcon.users {
+    background: #8e44ad;
+}
+.reachIcon.salary {
+    background: #4f6df5;
+}
+.reachIcon.reviews {
+    background: #f05d5e;
+}
+.reachIcon.questions {
+    background: #2ecc71;
+}
+
+.ReachBoxitem h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.ReachBoxitem p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .OurReachbox {
+        justify-content: center;
+        gap: 25px;
+    }
+}
+
+/* ---- Find Companies Section ---- */
+.findCompanies {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.findTitle {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.companywarpper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Arrows */
+.sliderArrow {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #6b4bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Left arrow */
+.sliderArrow.left {
+    margin-right: 0px;
+}
+
+/* right arrow */
+.sliderArrow.right {
+    margin-left: 0px;
+}
+
+/* Slider div */
+.companySlider {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+    width: 100%;
+}
+
+/* when add more comapanies then hide ka scrollbar of the comanyslider div */
+.companySlider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Card Warrper */
+.companyCard {
+  min-width: 320px;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* when we hover any card then transform */
+.companyCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* comapny office jpg image */
+.companyCover {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* company card bottom part */
+.companyBottom {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left content */
+.companyLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* comapny logo */
+.companyLogo {
+    width: 34px;
+    height: 34px;
+}
+
+/* comapany name */
+.companyText h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.companyText p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #6f7284;
+}
+
+/* Rating */
+.companyRating {
+    color: #1ea672;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* View all button */
+.viewAllBtn {
+    margin-top: 28px;
+    padding: 10px 28px;
+    border: 1px solid #6b4bff;
+    background: transparent;
+    color: #6b4bff;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.viewAllBtn:hover {
+    background: #6b4bff;
+    color: #fff;
+}
+
+/* Mobile Responsive  */
+@media (max-width: 768px) {
+  .sliderArrow {
+        display: none;
+    }
+}
+
+/* ========== CONTACT SECTION ========== */
+.contactSection {
+    padding: 30px 80px;
+}
+
+.contactDivWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.contactLeftPart {
+    flex: 1 1 45%;
+}
+
+.contactLeftPart h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.contactLeftPart p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    max-width: 460px;
+}
+
+.contactInformation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.informationBlock {
+    display: flex;
+    gap: 12px;
+}
+
+.informationBlock i {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #6b4bff;
+}
+
+.informationBlock h4 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.informationBlock p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 2px;
+}
+
+/* Right side contact form*/
+.contactRightPart {
+    flex: 1 1 40%;
+    background: #d5ceff;
+    padding: 26px 30px;
+    border-radius: 8px;
+}
+
+.contactRightPart h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.contactRightPart p {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: none;
+    background: white;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.formRow {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.contactForm textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contactForm button {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    color: #6b4bff;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contactForm button:hover {
+    background: #4b2fff;
+    color: #fff;
+}
+
+/* ---- Map Section --- */
+.MapSection {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 20px;            
+}
+
+/* wrapper that keeps aspect ratio & allows responsive height */
+.MapContainer {
+    max-width: 1180px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f7fb;
+    position: relative;
+}
+
+/* actual iframe */
+.MapContainer .SiteMap {
+    display: block;
+    width: 100%;
+    height: 420;
+    border: 0;
+    border-radius: 12px;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+    filter: none;
+}
+
+/* hover zoom effect */
+.MapContainer .SiteMap:hover {
+    transform: scale(1.01);
+}
+
+/* small overlay badge to place a marker or text on top-left) */
+.MapContainer::before {
+    content: " ";
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+    background: rgba(107,75,255,0.95);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* fallback image styling */
+.Mapfallback {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .MapContainer .SiteMap { 
+        height: 300px; 
+    }
+
+    .MapContainer::before { 
+        left: 12px; top: 12px; 
+    }
+}
+
+.MapContainer .SiteMap:focus {
+    outline: 3px solid rgba(107,75,255,0.22);
+    outline-offset: 2px;
+}
+
+.MapContainer.muted .SiteMap {
+    filter: grayscale(0.35) contrast(0.95) brightness(0.98);
+}
+
+@media (max-width: 992px) {
+    .contactSection {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactDivWrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contactLeftPart,
+    .contactRightPart {
+        width: 100%;
+    }
+
+    .contactInformation {
+        grid-template-columns: 1fr;
+    }
+
+    .formRow {
+        flex-direction: column;
+    }
+
+    .contactLeftPart h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contactSection {
+        padding: 30px 16px;
+    }
+
+    .contactLeftPart h2 {
+        font-size: 22px;
+    }
+
+    .contactRightPart {
+        padding: 22px 20px;
+    }
+}
