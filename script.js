@@ -35,27 +35,24 @@ document.addEventListener("click", (e) => {
 
 // Footer for index.html (ROOT page)
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("snapfindPages/footer.html")
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+
+    // detect how deep current page is
+    const isInsideFolder = window.location.pathname.includes("/snapfindPages/");
+
+    // decide correct path
+    const footerPath = isInsideFolder
+        ? "footer.html"
+        : "snapfindPages/footer.html";
+
+    fetch(footerPath)
         .then(res => {
             if (!res.ok) throw new Error("Footer not found");
             return res.text();
         })
         .then(html => {
-            document.getElementById("footer").innerHTML = html;
+            footer.innerHTML = html;
         })
-        .catch(err => console.error("Index footer error:", err));
+        .catch(err => console.error("Footer load error:", err));
 });
-
-// Footer for pages inside snapfindPages folder
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("footer.html")
-        .then(res => {
-            if (!res.ok) throw new Error("Footer not found");
-            return res.text();
-        })
-        .then(html => {
-            document.getElementById("footer").innerHTML = html;
-        })
-        .catch(err => console.error("Inner page footer error:", err));
-});
-
