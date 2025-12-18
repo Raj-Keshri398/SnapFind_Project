@@ -31,3 +31,15 @@ document.addEventListener("click", (e) => {
         navbar.classList.remove("active");
     }
 });
+
+
+// Footer Section link code
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("/snapfindPages/footer.html")
+        .then(res => res.text())
+        .then(data => {
+            const footer = document.getElementById("footer");
+            if (footer) footer.innerHTML = data;
+        })
+        .catch(err => console.error("Footer load error:", err));
+});
