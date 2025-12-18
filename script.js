@@ -35,14 +35,18 @@ document.addEventListener("click", (e) => {
 
 // Footer Section link code
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("snapfindPages/footer.html")
+    const basePath = window.location.pathname
+        .split("/")
+        .slice(0, -1)
+        .join("/");
+
+    fetch(`${basePath}/snapfindPages/footer.html`)
         .then(res => {
             if (!res.ok) throw new Error("Footer not found");
             return res.text();
         })
-        .then(data => {
-            const footer = document.getElementById("footer");
-            if (footer) footer.innerHTML = data;
+        .then(html => {
+            document.getElementById("footer").innerHTML = html;
         })
         .catch(err => console.error("Footer load error:", err));
 });
