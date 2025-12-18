@@ -33,14 +33,9 @@ document.addEventListener("click", (e) => {
 });
 
 
-// Footer Section link code
+// Footer for index.html (ROOT page)
 document.addEventListener("DOMContentLoaded", () => {
-    const basePath = window.location.pathname
-        .split("/")
-        .slice(0, -1)
-        .join("/");
-
-    fetch(`${basePath}/snapfindPages/footer.html`)
+    fetch("snapfindPages/footer.html")
         .then(res => {
             if (!res.ok) throw new Error("Footer not found");
             return res.text();
@@ -48,5 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(html => {
             document.getElementById("footer").innerHTML = html;
         })
-        .catch(err => console.error("Footer load error:", err));
+        .catch(err => console.error("Index footer error:", err));
 });
+
+// Footer for pages inside snapfindPages folder
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("footer.html")
+        .then(res => {
+            if (!res.ok) throw new Error("Footer not found");
+            return res.text();
+        })
+        .then(html => {
+            document.getElementById("footer").innerHTML = html;
+        })
+        .catch(err => console.error("Inner page footer error:", err));
+});
+
