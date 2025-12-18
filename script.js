@@ -35,8 +35,11 @@ document.addEventListener("click", (e) => {
 
 // Footer Section link code
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("/snapfindPages/footer.html")
-        .then(res => res.text())
+    fetch("snapfindPages/footer.html")
+        .then(res => {
+            if (!res.ok) throw new Error("Footer not found");
+            return res.text();
+        })
         .then(data => {
             const footer = document.getElementById("footer");
             if (footer) footer.innerHTML = data;
