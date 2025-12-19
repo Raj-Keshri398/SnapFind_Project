@@ -7,7 +7,7 @@ This project is a **Figma → HTML/CSS/JS conversion**, built to demonstrate rea
 
 ## 🌐 Live Demo
 
-👉 https://github.com/Raj-Keshri398/SnapFind_Project
+👉 https://raj-keshri398.github.io/SnapFind_Project/
 
 ---
 
