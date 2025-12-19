@@ -31,28 +31,3 @@ document.addEventListener("click", (e) => {
         navbar.classList.remove("active");
     }
 });
-
-
-// Footer for index.html (ROOT page)
-document.addEventListener("DOMContentLoaded", () => {
-    const footer = document.getElementById("footer");
-    if (!footer) return;
-
-    // detect how deep current page is
-    const isInsideFolder = window.location.pathname.includes("/snapfindPages/");
-
-    // decide correct path
-    const footerPath = isInsideFolder
-        ? "footer.html"
-        : "snapfindPages/footer.html";
-
-    fetch(footerPath)
-        .then(res => {
-            if (!res.ok) throw new Error("Footer not found");
-            return res.text();
-        })
-        .then(html => {
-            footer.innerHTML = html;
-        })
-        .catch(err => console.error("Footer load error:", err));
-});
