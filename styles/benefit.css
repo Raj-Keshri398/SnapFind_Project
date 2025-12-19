@@ -71,6 +71,8 @@ body {
     padding: 8px 18px;
     font-size: 14px;
     border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .menuToggle {
@@ -169,6 +171,8 @@ body {
     border-radius: 6px;
     background: #423e8b;
     color: #fff;
+    display: inline-block;
+    text-decoration: none;
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -688,6 +692,13 @@ body {
 .OfferRegistration h2 {
     font-size: 24px;
     margin-bottom: 20px;
+}
+
+.OfferRegistration .signregbtn {
+    border-radius: 4px;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* Responsive */
