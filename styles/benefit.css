@@ -645,38 +645,57 @@ body {
 /* Motivation code start here */
 .Motivation {
     background: linear-gradient(135deg, #64529a 0%, #8a4d8f 50%, #b76bbd 100%);
-    color: #fff;
+    color: #ffffff;
     padding: 50px 0;
 }
 
+/* Grid */
 .MotivationGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    text-align: center;
+    gap: 20px;
 }
 
+/* Number Box */
 .Motivation .num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     font-size: 22px;
     font-weight: 700;
 }
 
-.Motivation span {
+/* Subtitle */
+.Motivation .num span {
     display: block;
+    margin-top: 6px;
     font-size: 13px;
+    font-weight: 400;
     opacity: 0.9;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 768px) {
     .MotivationGrid {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 20px;
+    }
+
+    .Motivation .num {
+        font-size: 20px;
     }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
     .MotivationGrid {
         grid-template-columns: 1fr;
+    }
+
+    .Motivation .num {
+        font-size: 18px;
     }
 }
 /* Motivation code end here */

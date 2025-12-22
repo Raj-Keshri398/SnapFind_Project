@@ -640,6 +640,7 @@ a {
 
 /* card/Panel */
 .jobPanel {
+    position: relative;
     background: #e7e6ea;
     padding: 20px;
     border-radius: 14px;
@@ -650,6 +651,32 @@ a {
 
 .jobPanel:hover {
     transform: translateY(-4px);
+}
+
+.jobPanel .saveJob{
+    position:absolute;
+    top:14px;
+    right:14px;
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    background:#786ea2;
+    border:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+}
+
+.jobPanel .saveJob i{
+    color:#fff;
+    font-size:14px;
+}
+
+.jobPanel .saveJob:hover{
+    background:#4f3df0;
 }
 
 .jobPanel h3 {

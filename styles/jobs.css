@@ -1,0 +1,300 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: system-ui, sans-serif;
+    background:#f7f8ff;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+/* ---- Header ---- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #ffffff;
+}
+
+.headerSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 24px;
+}
+
+.logo img {
+    height: 36px;
+}
+
+/* Mobile toggle nav button */
+.menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #6b4bff;
+    cursor: pointer;
+    margin-right: 14px;
+    margin-bottom: 0;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    transition: all 0.3 ease;
+}
+
+.responsiveButtons {
+    display: none;
+}
+
+.nav a {
+    position: relative;
+    color: #646676;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #6b4bff;
+}
+
+.headerLeftButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.contactButton,
+.loginButton {
+    width: 100px;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.contactButton {
+    border: 1px solid #6b4bff;
+    background: transparent;
+    color: #6b4bff;
+}
+
+.contactButton:hover {
+    background: #6b4bff;
+    color: #fff;
+}
+
+.loginButton {
+    background: #6b4bff;
+    color: #fff;
+    box-shadow: 0 12px 25px rgba(107, 75, 255, 0.35);
+}
+
+.loginButton:hover {
+    background: #2d14e5;
+}
+
+/* ---- Responsive Header ---- */
+@media (max-width: 768px) {
+    .headerSection {
+        flex-wrap: wrap;
+    }
+
+    .menuToggle {
+        display: block;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 3;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+        transform: translateY(-200%);
+        opacity: 0;
+        pointer-events: none;
+        
+    }
+
+    /* When active */
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Hide desktop buttons */
+    .headerLeftButtons {
+        display: none;
+    }
+
+    /* Show mobile buttons */
+    .responsiveButtons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        margin-top: 0;
+    }
+
+    .responsiveButtons button {
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 16px;
+        padding: 6px 0;
+    }
+}
+
+
+/* Jobs Grid */
+.allJobs{
+    padding:50px 0;
+}
+
+.jobGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+/* Job Card */
+.jobCard{
+    background:#e7e6ea;
+    padding:20px;
+    border-radius:14px;
+    border:1px solid #ece6ff;
+    text-align:left;
+    transition:0.3s;
+}
+
+.jobCard:hover{
+    transform:translateY(-4px);
+}
+
+/* Top row */
+.jobCardTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:8px;
+}
+
+.jobCardTop h3{
+    font-size:17px;
+    font-weight:600;
+}
+
+/* Save Button */
+.saveJob{
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    background:#6b4bff;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.saveJob i{
+    color:#fff;
+    font-size:14px;
+}
+
+/* Meta */
+.jobMeta{
+    display:flex;
+    gap:8px;
+    margin-bottom:10px;
+}
+
+.tagBlue{
+    background:#eaf1ff;
+    color:#2563eb;
+    padding:4px 10px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.salary{
+    font-size:12px;
+    color:#444;
+}
+
+/* Company */
+.company{
+    font-size:13px;
+    color:#555;
+    margin-bottom:16px;
+}
+
+.company i{
+    color:#6b4bff;
+}
+
+/* Buttons */
+.btns{
+    display:flex;
+    gap:10px;
+}
+
+.outlinebutton{
+    padding:7px 16px;
+    font-size:12px;
+    border-radius:8px;
+    background:transparent;
+    border:1px solid #6b4bff;
+    color:#6b4bff;
+    font-weight:600;
+}
+
+.jobApply{
+    padding:7px 16px;
+    font-size:12px;
+    border-radius:8px;
+    background:#6b4bff;
+    color:#fff;
+    font-weight:600;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .btns{
+        flex-direction:column;
+    }
+
+    .outlinebutton,
+    .jobApply{
+        width:100%;
+    }
+}
+
+/* Responsive */
+@media(max-width:992px){
+    .jobGrid{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:600px){
+    .jobGrid{ grid-template-columns:1fr; }
+}
